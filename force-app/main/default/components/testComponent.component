@@ -1,0 +1,8 @@
+<apex:component controller="AccountController">
+<apex:attribute name="var" type="String" description="Variable to represent single account in the iterations" default=""></apex:attribute>
+<apex:repeat value="{!accs}" var="account">
+    <apex:componentBody >
+        <apex:variable var="{!var}" value="{!account}"></apex:variable>
+    </apex:componentBody>
+</apex:repeat>
+</apex:component>

@@ -1,0 +1,18 @@
+<apex:component controller="ApprovalComponentController">
+<apex:attribute name="var" type="String" description="Variable to represent single account in the iterations" default="" assignTo="{!recId}"></apex:attribute>
+<apex:attribute name="approval" type="String" description="Variable to represent approval" default=""></apex:attribute>
+<!-- <apex:attribute name="isSubmitForApproval" type="Boolean" description="Variable to represent record is Submitted For Approval" default="" assignTo="{!approvalResultForObject.isSubmitForApproval}"></apex:attribute>
+<apex:attribute name="recordId" type="String" description="Variable to represent recordId" default="" assignTo="{!approvalResultForObject.recordId}"></apex:attribute> -->
+<apex:outputText rendered="{!myApprovalData}"></apex:outputText>
+<apex:pageBlock title="Approval History">
+    comp {!approvalResultForObject} <br></br> <br></br>
+    <apex:repeat value="{!approvalResultForObject.approvals}" var="aprvl">
+        <apex:componentBody>
+            <apex:variable var="{!approval}" value="{!aprvl}"></apex:variable>
+        </apex:componentBody>
+    </apex:repeat>
+    <!-- <apex:variable var="{!isSubmitForApproval}" value="{!approvalResultForObject.isSubmitForApproval}"></apex:variable>
+    <apex:variable var="{!recordId}" value="{!approvalResultForObject.recordId}"></apex:variable> -->
+    
+</apex:pageBlock>
+</apex:component>

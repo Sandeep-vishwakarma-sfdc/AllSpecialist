@@ -1,0 +1,32 @@
+<apex:page showHeader="false" sidebar="false">
+<h1>Approval History</h1>
+<table border="1px">
+    <tr>
+        <th>Step Name</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+    </tr> 
+</table>
+<c:approvalHistorycmp var="0012v00003FspgV" approval="app">
+   
+    <apex:repeat value="{!app.listOfSteps}" var="listOfSteps">
+         
+        <apex:repeat value="{!listOfSteps}" var="step">
+            <table>
+            <tr>
+                <td><apex:outputText value="{!step.steps}"></apex:outputText></td>
+                <td><apex:outputText value="{!step.createdDate}"></apex:outputText></td>
+                <td>
+                    <apex:outputText value="Approve" rendered="{!step.status_approve}"></apex:outputText>
+                    <apex:outputText value="Pending" rendered="{!step.status_pending}"></apex:outputText>
+                    <apex:outputText value="Reject" rendered="{!step.status_reject}"></apex:outputText>
+                    <apex:outputText value="Start" rendered="{!step.status_start}"></apex:outputText>
+                </td>
+                <td><apex:outputText value="{!step.assignedTo}"></apex:outputText></td>
+            </tr>
+        </table>
+        </apex:repeat>
+    </apex:repeat>
+</c:approvalHistorycmp>
+</apex:page>
