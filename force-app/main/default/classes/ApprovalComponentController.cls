@@ -14,7 +14,15 @@ public with sharing class ApprovalComponentController {
      approvalResultForObject = new ApprovalList();
      List<ApprovalStepWrapper> aSW = new List<ApprovalStepWrapper>();  
      String recallApprovalProcessLink;  
-     Boolean isSubmitForApproval = true;  
+     Boolean isSubmitForApproval = true; 
+     String salesorderAccountOwner;
+     if(Id.valueOf(recId).getSobjectType().getDescribe().getName().equals('Sales_Order__c')){
+       if(Schema.sObjectType.Sales_Order__c.isAccessible()){
+        Sales_Order__c salesorder = [SELECT Id, Name, Sold_to_Party__c,Sold_to_Party__r.ownerId FROM Sales_Order__c where Id=:recId];
+        salesorderAccountOwner = salesorder.Sold_to_Party__r.ownerId; 
+       }
+     }
+
      for(ProcessInstance pI: getProcessHistory(recordId).values())  
      {  
        Map<Id,List<ProcessInstanceHistory>> mapOfProcessNodeIdAndProcessInstanceHistory = new Map<Id,List<ProcessInstanceHistory>>();  
@@ -32,26 +40,34 @@ public with sharing class ApprovalComponentController {
          for(ProcessInstanceHistory sWI:pI.StepsAndWorkitems)  
          {  
            if(sWI.processNodeId == pNID)  
-           {  
+           {
+             String comment=sWI.comments;
+             if(Id.valueOf(recId).getSObjectType().getDescribe().getName()=='Sales_Order__c'){
+              if(sWI.Actor.Id==salesorderAccountOwner){
+                  comment = sWI.Comments;
+              } else{
+                  comment = '';
+              }
+             }
                System.debug(sWI.Id);
                if(sWI.StepStatus == 'Approved')
                {
-                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate, sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,sWI.Comments,sWI.Id,true,false,false,false)); 
+                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate, sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,comment,sWI.Id,true,false,false,false)); 
                     System.debug('list of steps '+aSWr.listOfSteps);
                }
                if(sWI.StepStatus == 'Pending')
                {
-                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate, sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,sWI.Comments,sWI.Id,false,true,false,false)); 
+                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate, sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,comment,sWI.Id,false,true,false,false)); 
                     System.debug('list of steps '+aSWr.listOfSteps);
                }
                if(sWI.StepStatus == 'Rejected')
                {
-                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate,sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,sWI.Comments,sWI.Id,false,false,true,false)); 
+                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate,sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,comment,sWI.Id,false,false,true,false)); 
                     System.debug('list of steps '+aSWr.listOfSteps);
                }
                if(sWI.StepStatus == 'Started')
                {  
-                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate,sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,sWI.Comments,sWI.Id,false,false,false,true)); 
+                    aSWr.listOfSteps.add(new ApprovalHistoryWrap(sWI.CreatedDate,sWI.CreatedDate,sWI.OriginalActor.Name, sWI.StepStatus,sWI.Actor.Name,comment,sWI.Id,false,false,false,true)); 
                     System.debug('list of steps '+aSWr.listOfSteps);
                     // sWI.StepStatus = 'submitted';
                }
@@ -69,7 +85,7 @@ public with sharing class ApprovalComponentController {
      approvalResultForObject.isSubmitForApproval = isSubmitForApproval;  
      system.debug('asw'+aSW);  
      return approvalResultForObject;  
-    }
+  }
    /*  
     * This method queries the processinstance and workitem for the record  
     * Parameter: Record ID   
@@ -80,7 +96,8 @@ public with sharing class ApprovalComponentController {
    {  
      return new Map<Id,ProcessInstance>([SELECT Id, (SELECT ID, ProcessNodeId,  
                              StepStatus,Comments,TargetObjectId,ActorId,CreatedById,IsDeleted,IsPending  
-                             ,OriginalActorId,ProcessInstanceId,RemindersSent,CreatedDate,Actor.Name,  
+                             ,OriginalActorId,ProcessInstanceId,RemindersSent,CreatedDate,
+                             Actor.Id,Actor.Name,  
                              OriginalActor.Name , ProcessNode.Name FROM StepsAndWorkitems order by CreatedDate DESC, StepStatus ASC )   
                        FROM ProcessInstance where TargetObjectId =:objectId order by CreatedDate DESC]);  
    }  
@@ -123,9 +140,6 @@ public with sharing class ApprovalComponentController {
      public Boolean status_reject {get;set;}
     @AuraEnabled  
      public Boolean status_start {get;set;}  
-
-
-
      public ApprovalHistoryWrap(DateTime crDate,DateTime crTime, string name, string stp, string actor,string comment,Id recordId,Boolean sts_approve,Boolean sts_pending,Boolean sts_reject,Boolean sts_start)  
      {  
        createdDate = crDate.date().format();

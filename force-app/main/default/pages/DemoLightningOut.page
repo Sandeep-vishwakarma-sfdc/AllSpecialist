@@ -1,0 +1,17 @@
+<apex:page showHeader="false">
+<body>
+    <apex:includeLightning/>
+    <div id="mycmp"></div>
+
+    <script>
+        $Lightning.use("c:DemolightningOutApp",function(){
+            $Lightning.createComponent("c:DemoLightningOutCmp",
+            {msg:'Message from Vf Page'},
+            "mycmp",
+            function(cmp){
+                console.log('Component Created');
+            });
+        })
+    </script>
+</body>
+</apex:page>
