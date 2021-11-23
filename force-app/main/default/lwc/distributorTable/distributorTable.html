@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Distributor Table">
+        <lightning-datatable 
+            key-field="id" 
+            data={paginatedData} 
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+    <c-pagination-cmp 
+        tabledata={accounts} 
+        onaction={handlePaginationAction}>
+            <div class="slds-float_right" style="margin-right: 20rem;" slot="pageNumber"><b class="pagenumber">Page 1 of 10</b></div>
+    </c-pagination-cmp>
+</template>

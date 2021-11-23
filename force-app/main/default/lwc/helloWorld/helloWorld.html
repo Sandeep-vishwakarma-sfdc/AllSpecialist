@@ -5,4 +5,16 @@
       <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
     </div>
   </lightning-card>
+  <div style="max-height: 50px;">
+    <lightning-combobox
+        name="contacts"
+        label="Contacts"
+        onclick={handlebox}
+        placeholder="Choose Contact"
+        value={value}
+        onchange={handleChange}
+        aria-setsize="2"
+        options={statusOptions}>
+    </lightning-combobox>
+  </div>
 </template>

@@ -1,0 +1,1457 @@
+<template>
+
+
+    <div class="slds-theme_default slds-grid slds-wrap" style="padding: 10px 15px;">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_10-of-12"></div>
+        
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12" style="margin:10px 0;">
+            <lightning-button variant="brand" label="Submit" title="Primary action" onclick={handleClick} style="margin-right:10px;"></lightning-button>
+            <lightning-button label="Cancel" title="Primary action" onclick={handleClick}></lightning-button>
+     </div>  
+
+
+        <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+
+          <lightning-accordion allow-multiple-sections-open
+            onsectiontoggle={handleSectionToggle}
+            active-section-name={activeSections}>
+                         
+        <lightning-accordion-section name="A" label="">
+            <ul>
+             <li style="padding:5px; background:#ccc; border:1px solid #000;">No. of Lead Customer (100)</li>
+             <li style="padding:5px; background:#ccc; border:1px solid #000;">No. of Not Lead Customer (10)</li>
+
+            </ul>
+        </lightning-accordion-section>
+      </lightning-accordion>
+
+     
+
+        </div>
+         
+      
+        <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+         <lightning-tabset>
+        <lightning-tab label="IDENTIFICATION">
+           <h1 style="font-size:36px; font-weight:600;">Global Client Pathfinder Program</h1>
+           
+           <div class="slds-grid slds-wrap slds-gutters">
+           <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="border:2px solid #000; padding:10px; margin-top:15px; float:left;"> 
+           <h3 style="font-size:24px; font-weight:600; font-style:italic;">About the Program and Tool</h3>		
+            <p style="font-size:14px; line-height:22px; color:#000;"> "The objective of the program is to identify opportunities within key customers that will support the short-term growth of the business in the country, supporting OpenSkies ambition.
+            <br/><br/>
+            
+            This tool is a template for the countries to update/collect data in order to support the identification of opportunities and create the plans."			
+            </p> 
+            <br/>
+            <p style="text-align:center; font-size:13px;">         
+           <a href="#" >If you have any question, please access the FAQ			
+            Any problems or questions not in the FAQ, send an email to: rodrigo.farinha@upl-ltd.com </a>			
+          </p>
+    
+          </div>
+
+    
+          <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="float:right; margin:0 auto;">
+            <h1 style="font-size:36px; font-weight:700; color:orange;">ARGENTINA</h1>
+
+            <p style="font-style:italic; margin:10px 0;">Please, fill in the information below and click Next to start.
+            </p>
+
+            <lightning-input type="text" label="Name" style="font-weight:700;"></lightning-input>
+
+            <lightning-input type="text" label="Role" style="font-weight:700;"></lightning-input>
+
+            <lightning-input type="email" label="Email" style="font-weight:700;"></lightning-input>
+
+          </div>
+
+        </div>
+         
+        <div class="slds-grid slds-wrap slds-gutters" style="margin-top:15px;">
+          <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="margin:0 auto; text-align:center;">
+           <lightning-button variant="brand" label="Frequently Asked Question" title="Frequently Asked Question" onclick={showModalBox}></lightning-button>
+         </div>
+         <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12"></div>
+         </div>
+
+        </lightning-tab>
+
+        <lightning-tab label="POTENTIAL AND PROFILE" title="2nd tab extended title">
+            <h1 style="font-size:24px; font-weight:700;">ARGENTINA</h1>
+
+            <h2 style="font-size:20px; font-weight:600; margin:15px 0; background:orange; padding:5px;">CUSTOMER POTENTIAL AND PROFILE INFORMATION</h2>	
+
+           <!--<p>
+            INSTRUCTIONS<br/>						
+            All white cells can be edited. For each customer, inform the data in the following order of the labeled columns:<br/>						
+            (1) Confirm if the type of customer in UPL system is correct. In the dropdown list, select the correct type.<br/>						
+            (2) Indicate the total purchase of ALL CROP PROTECTION COMPANIES to the channel. This data should be indicated as INDUSTRY PRICE. Only consider sales of PRODUCTS from the following categories:<br/>						
+            > Fungicides = total fungicides	<br/>					
+            > Insecticides = total insecticides	<br/>					
+            > Herbicides = total herbicides		<br/>				
+            > Biosolutions = biocontrol and biostimulants products		<br/>				
+            > Soil and Seed Health = Seed treatment and special fertilizers	<br/>					
+            > Other relevant crop protection products to UPL business		<br/>				
+            (3) Estimate the markup (profit margin) in percentage of sales charged by the channel to sell to end customers. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] <br/>						
+            (4) Check if the total sales to channel (2) and the markup (3) makes up the estimated revenues of the channel in farm gate price. If the numbers do not seem rigth, please review columns (1) and (2).	<br/>					
+            (5) Estimate the number of sales rep that areemployees (it can be full-time employees or third party) in the channel. Consider only sales rep of the forementioned product categories. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] 	<br/>					
+            (6) Estimate the number of outlets the customer has on your country. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] 	<br/>					
+            
+          </p>-->
+
+          <div class="slds-grid slds-wrap slds-gutters" style="background:#f1f1f1; padding:10px;">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="
+              border:1px solid #000;
+              display:inline-block;
+            background-color:#fff; padding:3px 5px; text-align:center;">05</div><label style="display:inline; margin-left:5px; font-weight:600;">Empty</label>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="
+              border:1px solid #000;
+              display:inline-block;
+            background-color:yellow; padding:3px 5px; text-align:center;">20</div><label style="display:inline; margin-left:5px; font-weight:600;">Inprogress</label>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="color:#fff;
+              border:1px solid #000;
+              display:inline-block;
+              background-color:green; padding:3px 5px; text-align:center;">30</div><label style="display:inline; margin-left:5px; font-weight:600;">Completed</label>
+            </div>
+
+            </div>
+
+
+          <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-input type="search" label="Search" style="font-weight:600;"></lightning-input>
+          </div>
+       
+          <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-combobox
+            name="No. of Lead Customer"
+            label="Search for"
+            value={value}
+            placeholder="Select"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            </div>
+
+          </div>
+
+          <div class="slds-scrollable_x slds-scrollable_y" style="height:300px; overflow-y:scroll; margin-top:15px;">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                <col width="215">
+                <col width="147">
+                <col width="259">
+                <col width="271">
+                <col width="182">
+                <col width="324">
+                <col width="213">
+                <col width="196">
+
+                <thead>
+                <tr>
+                  <th width="215">CLIENT    (LEAD CLIENT)</th>
+                  <th width="147">CUSTOMER TYPE</th>
+                    <th width="259" style="text-align:center;">(1) CONFIRM    CUSTOMER TYPE <br>
+                    INDICATED ON THE LEFT ADJACENT CELL</th>
+                    <th width="271" style="text-align:center;">(2) TOTAL PURCHASE OF CROP    PROTECTION<br>
+                    (INDUSTRY PRICE) 2020/21 (USD MILLION)</th>
+                    <th width="182" style="text-align:center;">(3) ESTIMATED MARKUP OF CHANNEL    (IN % OF SALES)</th>
+                    <th width="324" style="text-align:center;">(4) CONFIRM THE ESTIMATED <br>
+                    REVENUES OF THE CUSTOMER IN 2020/21</th>
+                    <th width="213" style="text-align:center;">(5) ESTIMATED NUMBER <br>
+                    OF SALES REP ON ROLE</th>
+                    <th width="196" style="text-align:center;">(6) NUMBER OF STORES <br>
+                    THAT THE CHANNEL HAS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>ACEITERA GENERAL DEHEZA S.A.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$1.00 </td>
+                  <td style="text-align:center;">40%</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    $1 million</td>
+                  <td style="text-align:center;">2</td>
+                  <td style="text-align:center;">1</td>
+                </tr>
+                <tr>
+                  <td>ENRIQUE M. BAYA CASAL S.A.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$1.00 </td>
+                  <td>&nbsp;</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    $1 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>LOS GROBO AGROPECUARIA S.A.</td>
+                  <td>Dealer &amp; Retail</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$2.00 </td>
+                  <td style="text-align:center;">10%</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    $2 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>CAMBIAGNO GABRIEL ANDRES</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>NOVOZYMES BIOAG S.A.</td>
+                  <td>B2B</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$1.00 </td>
+                  <td>&nbsp;</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    $1 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>LARTIRIGOYEN Y CIA. S.A.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>AGRICULTORES FEDERADOS ARGENTI</td>
+                  <td>B2B</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$2.00 </td>
+                  <td>&nbsp;</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD $2 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>SUMITOMO CHEMICAL ARGENTINA    S.A.</td>
+                  <td>B2B</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>AGROEMPRESA COLON S.A.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>DASER AGRO SA.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>HECTOR A. BERTONE S.A</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>SIGMA AGRO SA</td>
+                  <td>B2B</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>SINER S.A.</td>
+                  <td>Dealer &amp; Retail</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>AJU S.R.L.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>ROCA AGRO S.R.L.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>UNION AGRICOLA DE AVELLANEDA L</td>
+                  <td>Cooperative</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$1.00 </td>
+                  <td style="text-align:center;">20%</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    $1 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>SURGEN SRL</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>CARGILL S.A.C.I.</td>
+                  <td>Dealer &amp; Retail</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>RURALCO SOLUCIONES S.A.</td>
+                  <td>B2B</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>AGRONORT S A</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>PRO DE MAN S.A.</td>
+                  <td>Farmer</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td style="text-align:center;">$50.00 </td>
+                  <td>&nbsp;</td>
+                  <td style="text-align:center;">The total farm gate revenues are USD    50 million</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>QUANTA S.A.</td>
+                  <td>Distributor</td>
+                  <td style="text-align:center;">Customer Type is Already Correct</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+            </tbody>
+              </table>
+
+          </div>
+
+        </lightning-tab>
+
+        <lightning-tab label="CATEGORY ALLOCATION">
+           
+          <h1 style="font-size:24px; font-weight:700;">ARGENTINA</h1>
+
+            <h2 style="font-size:20px; font-weight:600; margin:15px 0; background:orange; padding:5px;">POTENTIAL ALLOCATION BY PRODUCT CATEGORY</h2>	
+
+            <div class="slds-grid slds-wrap slds-gutters" style="background:#f1f1f1; padding:10px;">
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:#fff; padding:3px 5px; text-align:center;">05</div><label style="display:inline; margin-left:5px; font-weight:600;">Empty</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:yellow; padding:3px 5px; text-align:center;">20</div><label style="display:inline; margin-left:5px; font-weight:600;">Inprogress</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="color:#fff;
+                border:1px solid #000;
+                display:inline-block;
+                background-color:green; padding:3px 5px; text-align:center;">30</div><label style="display:inline; margin-left:5px; font-weight:600;">Completed</label>
+              </div>
+  
+              </div>
+
+
+          <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-input type="search" label="Search" style="font-weight:600;"></lightning-input>
+          </div>
+       
+          <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-combobox
+            name="No. of Lead Customer"
+            label="Search for"
+            value={value}
+            placeholder="Select"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            </div>
+
+          </div>
+
+          <div class="slds-scrollable_x slds-scrollable_y" style="height:300px; overflow-y:scroll; margin-top:15px;">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                
+         
+              <col width="235">
+              <col width="193">
+              <col width="124">
+              <col width="124" span="2">
+              <col width="124" span="3">
+              <col width="90">
+              <col width="264">
+
+              <thead>
+              <tr>
+                <th width="235">CUSTOMER    (LEAD CUSTOMER)</th>
+                <th width="193" style="text-align:center;">ALL COMPANIES PURCHASE <br/>TO CUSTOMER 2020/21 (SEE TAB 1)</th>
+                <th width="124" style="text-align:center;">FUNGICIDE</th>
+                <th width="124" style="text-align:center;">INSECTICIDES</th>
+                <th width="124" style="text-align:center;">HERBICIDES</th>
+                <th width="124" style="text-align:center;">BIOSOLUTIONS</th>
+                <th width="124" style="text-align:center;">SOIL AND SEED HEALTH</th>
+                <th width="124" style="text-align:center;">OTHER <br/>
+                  CATEGORIES</th>
+                <th width="90" style="text-align:center;">REMAINING</th>
+                <th width="264" style="text-align:center;">CHECK IF DISTRIBUTION IS CORRECT</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>ACEITERA GENERAL DEHEZA S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>0%</td>
+                <td style="background:green; color:#fff;">Distribution completed</td>
+              </tr>
+              <tr>
+                <td>ENRIQUE M. BAYA CASAL S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>LOS GROBO AGROPECUARIA S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>CAMBIAGNO GABRIEL ANDRES</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>NOVOZYMES BIOAG S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>LARTIRIGOYEN Y CIA. S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>AGRICULTORES FEDERADOS ARGENTI</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>SUMITOMO CHEMICAL ARGENTINA    S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>AGROEMPRESA COLON S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>DASER AGRO SA.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>HECTOR A. BERTONE S.A</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+            
+              
+            </tbody>
+              </table>
+
+          </div>
+
+        </lightning-tab>
+
+        <lightning-tab label="CROP ALLOCATION">
+           
+          <h1 style="font-size:24px; font-weight:700;">ARGENTINA</h1>
+
+            <h2 style="font-size:20px; font-weight:600; margin:15px 0; background:orange; padding:5px;">POTENTIAL ALLOCATION BY MAIN CROPS	
+            </h2>	
+
+            <div class="slds-grid slds-wrap slds-gutters" style="background:#f1f1f1; padding:10px;">
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:#fff; padding:3px 5px; text-align:center;">05</div><label style="display:inline; margin-left:5px; font-weight:600;">Empty</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:yellow; padding:3px 5px; text-align:center;">20</div><label style="display:inline; margin-left:5px; font-weight:600;">Inprogress</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="color:#fff;
+                border:1px solid #000;
+                display:inline-block;
+                background-color:green; padding:3px 5px; text-align:center;">30</div><label style="display:inline; margin-left:5px; font-weight:600;">Completed</label>
+              </div>
+  
+              </div>
+
+
+          <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-input type="search" label="Search" style="font-weight:600;"></lightning-input>
+          </div>
+       
+          <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+          <lightning-combobox
+            name="No. of Lead Customer"
+            label="Search for"
+            value={value}
+            placeholder="Select"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            </div>
+
+          </div>
+
+          <div class="slds-scrollable_x slds-scrollable_y" style="height:300px; overflow-y:scroll; margin-top:15px;">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                
+         
+              <col width="235">
+              <col width="193">
+              <col width="124">
+              <col width="124" span="2">
+              <col width="124" span="3">
+              <col width="90">
+              <col width="264">
+
+              <thead>
+              <tr>
+                <th width="235">CUSTOMER    (LEAD CUSTOMER)</th>
+                <th width="193" style="text-align:center;">ALL COMPANIES PURCHASE <br/>TO CUSTOMER 2020/21 (SEE TAB 1)</th>
+                <th width="124" style="text-align:center;">SOYBEAN</th>
+                <th width="124" style="text-align:center;">MAIZE</th>
+                <th width="124" style="text-align:center;">CEREAL</th>
+                <th width="124" style="text-align:center;">PEANUTS</th>
+                <th width="124" style="text-align:center;">POTATO</th>
+                <th width="124" style="text-align:center;">F and V</th>
+                <th width="124" style="text-align:center;">OTHERS</th>
+                <th width="90" style="text-align:center;">REMAINING</th>
+                <th width="264" style="text-align:center;">CHECK IF DISTRIBUTION IS CORRECT</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>ACEITERA GENERAL DEHEZA S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>ENRIQUE M. BAYA CASAL S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>LOS GROBO AGROPECUARIA S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>CAMBIAGNO GABRIEL ANDRES</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>NOVOZYMES BIOAG S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>LARTIRIGOYEN Y CIA. S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>AGRICULTORES FEDERADOS ARGENTI</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>SUMITOMO CHEMICAL ARGENTINA    S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>AGROEMPRESA COLON S.A.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>DASER AGRO SA.</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+              <tr>
+                <td>HECTOR A. BERTONE S.A</td>
+                <td></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+                <td>100%</td>
+                <td style="background:red; color:#fff;">Please check the values. Not matching 100%</td>
+              </tr>
+            
+              
+            </tbody>
+              </table>
+
+          </div>
+
+        </lightning-tab>
+
+        <lightning-tab label="COMPETITION">
+           
+          <h1 style="font-size:24px; font-weight:700;">ARGENTINA</h1>
+
+          <h2 style="font-size:20px; font-weight:600; margin:15px 0; background:orange; padding:5px;">ASSESSMENT OF COMPETITION	
+	           </h2>	
+
+             <div class="slds-grid slds-wrap slds-gutters" style="background:#f1f1f1; padding:10px;">
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:#fff; padding:3px 5px; text-align:center;">05</div><label style="display:inline; margin-left:5px; font-weight:600;">Empty</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="
+                border:1px solid #000;
+                display:inline-block;
+              background-color:yellow; padding:3px 5px; text-align:center;">20</div><label style="display:inline; margin-left:5px; font-weight:600;">Inprogress</label>
+              </div>
+  
+              <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                <div style="color:#fff;
+                border:1px solid #000;
+                display:inline-block;
+                background-color:green; padding:3px 5px; text-align:center;">30</div><label style="display:inline; margin-left:5px; font-weight:600;">Completed</label>
+              </div>
+  
+              </div>
+
+
+        <div class="slds-grid slds-wrap slds-gutters">
+          <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        <lightning-input type="search" label="Search" style="font-weight:600;"></lightning-input>
+        </div>
+     
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        <lightning-combobox
+          name="No. of Lead Customer"
+          label="Search for"
+          value={value}
+          placeholder="Select"
+          options={options}
+          onchange={handleChange} ></lightning-combobox>
+          </div>
+
+        </div>
+
+        <div class="slds-scrollable_x slds-scrollable_y" style="height:300px; overflow-y:scroll; margin-top:15px;">
+
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+              
+       
+            <col width="235">
+            <col width="193">
+            <col width="124">
+            <col width="124" span="2">
+            <col width="124" span="3">
+            <col width="90">
+            <col width="264">
+
+            <thead>
+            <tr>
+              <th width="235">CUSTOMER    (LEAD CUSTOMER)</th>
+              <th width="193" style="text-align:center;">Write the name of the #1<br/>COMPANY</th>
+              <th width="124" style="text-align:center;">Indicate the Share<br/>of Wallet of the #1 COMPANY</th>
+              <th width="124" style="text-align:center;">Write the name of the <br/>#2 COMPANY</th>
+              <th width="124" style="text-align:center;">Indicate the Share<br/>of Wallet of the #2 COMPANY</th>
+              <th width="124" style="text-align:center;">Write the name of the<br/>#3 COMPANY</th>
+              <th width="124" style="text-align:center;">Indicate the Share<br/>of Wallet of the #3 COMPANY</th>
+              <th width="124" style="text-align:center;">Write the name of the<br/>#4 COMPANY</th>
+              <th width="124" style="text-align:center;">Indicate the Share of<br/>Wallet of the #4 COMPANY</th>
+              <th width="90" style="text-align:center;">Write the name of<br/>the #5 COMPANY</th>
+              <th width="264" style="text-align:center;">Indicate the Share of<br/>Wallet of the #5 COMPANY</th>
+              <th width="264" style="text-align:center;">Write the name of<br/> the #6 COMPANY</th>
+              <th width="264" style="text-align:center;">Indicate the Share of <br/>Wallet of the #6 COMPANY</th>
+              <th width="264" style="text-align:center;">Write the name of <br/>the #7 COMPANY</th>
+              <th width="264" style="text-align:center;">Indicate the Share of <br/>Wallet of the #7 COMPANY</th>
+              <th width="264" style="text-align:center;">Write the name of<br/> the #8 COMPANY</th>
+              <th width="264" style="text-align:center;">Indicate the Share of <br/>Wallet of the #8 COMPANY</th>
+              <th width="264" style="text-align:center;">Write UPL POSITION</th>
+              <th width="264" style="text-align:center;">UPL's Share of Wallet</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>ACEITERA GENERAL DEHEZA S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td>508%</td>
+             
+            </tr>
+            <tr>
+              <td>ENRIQUE M. BAYA CASAL S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td>467%</td>
+             
+            </tr>
+            <tr>
+              <td>LOS GROBO AGROPECUARIA S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td>200%</td>
+             
+            </tr>
+            <tr>
+              <td>CAMBIAGNO GABRIEL ANDRES</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>NOVOZYMES BIOAG S.A.</td>
+             <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td>319%</td>
+            </tr>
+            <tr>
+              <td>LARTIRIGOYEN Y CIA. S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>AGRICULTORES FEDERADOS ARGENTI</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td>141%</td>
+            </tr>
+            <tr>
+              <td>SUMITOMO CHEMICAL ARGENTINA    S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>AGROEMPRESA COLON S.A.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>DASER AGRO SA.</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>HECTOR A. BERTONE S.A</td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+            </tr>
+          
+            
+          </tbody>
+            </table>
+
+        </div>
+
+        </lightning-tab>
+
+        <lightning-tab label="OUTLOOK">
+           
+          <h1 style="font-size:24px; font-weight:700;">ARGENTINA</h1>
+
+          <h2 style="font-size:20px; font-weight:600; margin:15px 0; background:orange; padding:5px;">OUTLOOK OF CUSTOMERS</h2>	
+
+          <div class="slds-grid slds-wrap slds-gutters" style="background:#f1f1f1; padding:10px;">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="
+              border:1px solid #000;
+              display:inline-block;
+            background-color:#fff; padding:3px 5px; text-align:center;">05</div><label style="display:inline; margin-left:5px; font-weight:600;">Empty</label>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="
+              border:1px solid #000;
+              display:inline-block;
+            background-color:yellow; padding:3px 5px; text-align:center;">20</div><label style="display:inline; margin-left:5px; font-weight:600;">Inprogress</label>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+              <div style="color:#fff;
+              border:1px solid #000;
+              display:inline-block;
+              background-color:green; padding:3px 5px; text-align:center;">30</div><label style="display:inline; margin-left:5px; font-weight:600;">Completed</label>
+            </div>
+
+            </div>
+
+
+        <div class="slds-grid slds-wrap slds-gutters">
+          <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        <lightning-input type="search" label="Search" style="font-weight:600;"></lightning-input>
+        </div>
+     
+        <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+        <lightning-combobox
+          name="No. of Lead Customer"
+          label="Search for"
+          value={value}
+          placeholder="Select"
+          options={options}
+          onchange={handleChange} ></lightning-combobox>
+          </div>
+
+        </div>
+
+        <div class="slds-scrollable_x slds-scrollable_y" style="height:300px; overflow-y:scroll; margin-top:15px;">
+
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+              
+       
+            <col width="235">
+            <col width="193">
+            <col width="124">
+            <col width="124" span="2">
+            <col width="124" span="3">
+            <col width="90">
+            <col width="264">
+
+            <thead>
+            <tr>
+              <th width="235">CUSTOMER    (LEAD CUSTOMER)</th>
+              <th width="193" style="text-align:center;">ALL COMPANIES PURCHASE <br/>TO CUSTOMER 2020/21 (SEE TAB 1)</th>
+              <th width="124" style="text-align:center;">SO(1) ESTIMATED GROWTH (%) <br/>IN PERCENTAGE 2020/21 TO  2021/22 YBEAN</th>
+              <th width="124" style="text-align:center;">"(2) CONFIRM THE ESTIMATED TOTAL SALES <br/>TO THE CHANNEL IN 2021/22"</th>
+              <th width="124" style="text-align:center;">(3) ESTIMATED GROWTH (%) <br/>IN PERCENTAGE 2021/22 TO 2022/23 </th>
+              <th width="124" style="text-align:center;">"(4) CONFIRM THE ESTIMATED TOTAL SALES <br/>TO THE CHANNEL IN 2022/23"</th>
+              <th width="124" style="text-align:center;">(5) ESTIMATED GROWTH (%) <br/>IN PERCENTAGE 2022/23 TO 2023/24</th>
+              <th width="124" style="text-align:center;">"(6) CONFIRM THE ESTIMATED TOTAL SALES <br/>TO THE CHANNEL IN 2023/24"</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>ACEITERA GENERAL DEHEZA S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+           </tr>
+            <tr>
+              <td>ENRIQUE M. BAYA CASAL S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>LOS GROBO AGROPECUARIA S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>CAMBIAGNO GABRIEL ANDRES</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>NOVOZYMES BIOAG S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>LARTIRIGOYEN Y CIA. S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>AGRICULTORES FEDERADOS ARGENTI</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>SUMITOMO CHEMICAL ARGENTINA    S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>AGROEMPRESA COLON S.A.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>DASER AGRO SA.</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+            <tr>
+              <td>HECTOR A. BERTONE S.A</td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+              <td><lightning-input type="text" style="margin-top:-16px;"></lightning-input></td>
+            </tr>
+          
+            
+          </tbody>
+            </table>
+
+        </div>
+
+        </lightning-tab>
+
+    </lightning-tabset>
+
+    </div>
+
+    <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+      
+    <lightning-accordion allow-multiple-sections-open
+            onsectiontoggle={handleSectionToggle}
+            active-section-name={activeSections}>
+                         
+        <lightning-accordion-section name="B" label="">
+            
+          <p style="padding:5px;">
+            INSTRUCTIONS<br/>						
+            All white cells can be edited. For each customer, inform the data in the following order of the labeled columns:<br/>						
+            (1) Confirm if the type of customer in UPL system is correct. In the dropdown list, select the correct type.<br/>						
+            (2) Indicate the total purchase of ALL CROP PROTECTION COMPANIES to the channel. This data should be indicated as INDUSTRY PRICE. Only consider sales of PRODUCTS from the following categories:<br/>						
+            > Fungicides = total fungicides	<br/>					
+            > Insecticides = total insecticides	<br/>					
+            > Herbicides = total herbicides		<br/>				
+            > Biosolutions = biocontrol and biostimulants products		<br/>				
+            > Soil and Seed Health = Seed treatment and special fertilizers	<br/>					
+            > Other relevant crop protection products to UPL business		<br/>				
+            (3) Estimate the markup (profit margin) in percentage of sales charged by the channel to sell to end customers. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] <br/>						
+            (4) Check if the total sales to channel (2) and the markup (3) makes up the estimated revenues of the channel in farm gate price. If the numbers do not seem rigth, please review columns (1) and (2).	<br/>					
+            (5) Estimate the number of sales rep that areemployees (it can be full-time employees or third party) in the channel. Consider only sales rep of the forementioned product categories. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] 	<br/>					
+            (6) Estimate the number of outlets the customer has on your country. [ONLY DEALER AND RETAIL / DISTRIBUTOR / COOPERATIVES] 	<br/>					
+            
+          </p>
+
+        </lightning-accordion-section>
+      </lightning-accordion>
+
+    </div>
+
+        </div>
+
+
+        <!-- modal start -->      
+   <template if:true={isShowModal}>
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+<div class="slds-modal__container">
+<!-- modal header start -->
+  <header class="slds-modal__header">
+     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+        <lightning-icon icon-name="utility:close"
+           alternative-text="close"
+           variant="inverse"
+           size="small" ></lightning-icon>
+        <span class="slds-assistive-text">Close</span>
+     </button>
+     <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Global Client Pathfinder Program		
+    </h2>
+  </header>
+
+  <!-- modal body start -->
+  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <h2 style="background:#000; color:#fff; padding:5px; text-align:center; font-size:20px; font-weight:600;">Frequently Asked Questions - FAQ</h2>
+  </div>
+
+  <!-- modal footer start-->
+  <footer class="slds-modal__footer">
+     <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+  </footer>
+
+</div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- modal end -->
+
+
+      </div>
+
+    
+</template>
