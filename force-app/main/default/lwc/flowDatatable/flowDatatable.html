@@ -1,0 +1,47 @@
+<template>
+    <!-- <lightning-datatable data={records} columns={fieldColumns} key-field="id" hide-checkbox-column></lightning-datatable> -->
+
+    <div if:false={viewRecord} class="table-scroll" style="margin-top:15px;">
+
+        <table class="slds-table_fixed-layout slds-table slds-table_bordered"
+          aria-labelledby="element-with-table-label other-element-with-table-label">
+          <thead>
+            <tr>
+                <template for:each={fieldColumns} for:item="col">
+                <th  key={col.label} class="fix slds-cell-wrap fixHeader" >{col.label}
+                </th>
+                </template>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <template for:each={records} for:item="rec">
+              <tr key={rec.Id}>
+              <td key={rec.Id} id={rec.Id} class="fix" onclick={handleViewRecord}>{rec.Name}</td>
+              <td key={rec.Id} id={rec.Id} class="fix" onclick={handleViewRecord}>{rec.Title}</td>
+              <td key={rec.Id} id={rec.Id} class="fix" onclick={handleViewRecord}>{rec.Department}</td>
+             </tr>
+            </template>
+         </tbody>
+        </table>
+    </div>
+
+    <div >
+        <template if:true={viewRecord}>
+            <lightning-card title="Record view from for Account" icon-name="utility:back" onclick={handleCancleRecord}>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-record-view-form
+                                record-id={recId} object-api-name="Contact">
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                                <lightning-output-field field-name="Email"></lightning-output-field>
+                            <lightning-output-field field-name="OwnerId"></lightning-output-field>
+                   <lightning-output-field field-name="LastModifiedById"></lightning-output-field>
+                            </lightning-record-view-form>
+                        </lightning-layout-item>
+                    </lightning-layout>
+            </lightning-card>
+        </template>
+    </div>
+</template>

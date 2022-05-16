@@ -13,7 +13,7 @@ public with sharing class ApprovalComponentController {
      System.debug('Record Id ---> '+recordId);
      approvalResultForObject = new ApprovalList();
      List<ApprovalStepWrapper> aSW = new List<ApprovalStepWrapper>();  
-     String recallApprovalProcessLink;  
+     String recallApprovalProcessLink;   
      Boolean isSubmitForApproval = true; 
      String salesorderAccountOwner;
      if(Id.valueOf(recId).getSobjectType().getDescribe().getName().equals('Sales_Order__c')){

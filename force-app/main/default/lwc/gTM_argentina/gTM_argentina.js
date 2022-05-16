@@ -1,6 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { loadStyle , loadScript} from 'lightning/platformResourceLoader';
-import jquerymin from '@salesforce/resourceUrl/jquerymin';
+import jquerymin from '@salesforce/resourceUrl/jquery';
 import sidebarjs from '@salesforce/resourceUrl/sidebarjs';
 export default class gTM_argentina extends LightningElement {
 

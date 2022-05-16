@@ -1,5 +1,5 @@
 //pass by value & pass by reference 
-public with sharing class Demo3 {
+public with sharing class Demo3  {
 //------------------------pass by value--------------------------------
 
     public void mainValueMethod() {

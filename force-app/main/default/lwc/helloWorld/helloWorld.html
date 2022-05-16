@@ -17,4 +17,9 @@
         options={statusOptions}>
     </lightning-combobox>
   </div>
+  <select onchange={handleSelect}>
+    <template for:each={options} for:item="op">
+      <option key={op} value={op}>{op}</option>
+    </template>
+  </select>
 </template>

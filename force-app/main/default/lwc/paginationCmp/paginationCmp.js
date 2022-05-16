@@ -1,7 +1,34 @@
 import { LightningElement,api,track } from 'lwc';
+import Records_per_page from '@salesforce/label/c.Records_per_page'
+import Page from '@salesforce/label/c.Page'
+import oflabel from '@salesforce/label/c.of'
+import First from '@salesforce/label/c.First'
+import Next from '@salesforce/label/c.Next'
+import Previous from '@salesforce/label/c.Previous'
+import Last from '@salesforce/label/c.Last'
 
 export default class PaginationCmp extends LightningElement {
-    @track page = 1;
+
+    page = 1;
+    options = [{'value':10,default:false},{'value':20,default:false},{'value':50,default:false},{'value':100,default:false}];
+
+    set pagevalue(value){
+        this.page = value;
+    }
+    @api get pagevalue(){
+        return this.page;
+    }
+
+    set pageSizeValue(value){
+        this.pageSize = Number(value);
+        let opt = this.options.findIndex(op=>op.value==String(value));
+        this.options[opt].default = true;
+        console.log('options ',this.options);
+    }
+    @api get pageSizeValue(){
+        return this.pageSize;
+    }
+
     startingRecord = 1;
     endingRecord = 0;
     pageSize = 10;
@@ -10,32 +37,37 @@ export default class PaginationCmp extends LightningElement {
     items = [];
     @track disableBtn = {first:false,previous:false,next:false,last:false};
     
-    
     tabledata;
     data = [];
     @api get tabledata(){
       return this.items;  
     }
 
+    labels = {
+        Records_per_page:Records_per_page,
+        Page:Page,
+        of:oflabel,
+        First:First,
+        Previous:Previous,
+        Next:Next,
+        Last:Last
+    }
+
     set tabledata(value){
         if(value){
+            setTimeout(() => {
         this.data = JSON.parse(JSON.stringify(value));
+        console.log('Pagination data ',this.data,'page ',this.page);
         this.totalRecordCount = this.data.length;
         this.totalPage = Math.ceil(this.totalRecordCount/this.pageSize);
-        this.items = this.data.slice(0,this.pageSize);
-        this.endingRecord = this.pageSize;
-        console.log('Items ',this.items);
-        let objlist = {values:this.items}
-        if(this.querySelector('.pagenumber')){
-            this.querySelector('.pagenumber').innerHTML = `Page: ${this.page} of ${this.totalPage}`;
-        }
-        this.checkNextPreviousbtn(this.page,this.totalPage);
-        this.dispatchEvent(new CustomEvent('action',{detail:objlist}))
+        this.displayRecordPerPage(this.page);
+        }, 500);
         }
     }
     
     get pageSizeOptions(){
-        return [5,10,50,100];
+        // return [10,20,50,100];
+        return this.options;
     }
 
     handleRecordsPerPage(event){
@@ -76,9 +108,9 @@ export default class PaginationCmp extends LightningElement {
 
         this.items = this.data.slice(this.startingRecord, this.endingRecord);
         this.startingRecord = this.startingRecord + 1;
-        let objlist = {values:this.items}
+        let objlist = {values:this.items,currentPage:this.page}
         if(this.querySelector('.pagenumber')){
-            this.querySelector('.pagenumber').innerHTML = `Page: ${this.page} of ${this.totalPage}`;
+            this.querySelector('.pagenumber').innerHTML = `${this.labels.Page}: ${this.page} ${this.labels.of} ${this.totalPage}`;
         }
         this.checkNextPreviousbtn(this.page,this.totalPage);
         this.dispatchEvent(new CustomEvent('action',{detail:objlist}))

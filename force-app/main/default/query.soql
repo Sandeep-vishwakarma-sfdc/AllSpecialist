@@ -1,1 +1,6 @@
 select COUNT() from Account
+
+String str='Active';
+
+boolean b = str =='Active'?true:false;
+System.debug(b);
